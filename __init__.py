@@ -29,8 +29,8 @@ class Entur(MycroftSkill):
             'line': departure['line'], 
             'time': self._format_time(departure['departureTime'])
         }, wait=True)
-        yesno = self.ask_yesno("More departures?")
-        if yesno == 'yes':
+        response = self.get_response("more.departures")
+        if response == 'yes':
             for departure in departures[0:5]:
                 self.speak_dialog("next.departure", data={
                     'destination': departure['destination'],
