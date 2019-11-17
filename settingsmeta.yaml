@@ -7,12 +7,12 @@ skillMetadata:
           label: You need to list the stops to use to search for realtime departure information. Go to https://api.entur.io/journey-planner/v2/ide/ and use the Search for ID button. Use the value in the ID column
         - name: stops
           type: text
-          label: Comma seperated list of stop ids
+          label: Comma separated list of stop ids
           value: ""
         - type: label
           label: If there are departures you want to ignore, you can enter a comma separated list of words to filter on in the name of the departure
         - name: filter
           type: text
-          label: Command seperated list of words to filter out
+          label: Comma separated list of words
           value: ""
           placeholder: "via Storo,Bergkrystallen"
