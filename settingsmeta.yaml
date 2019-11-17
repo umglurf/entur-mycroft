@@ -1,22 +1,18 @@
 name: Entur
 skillMetadata:
   sections:
-    - name: Options << Name of section
-      fields:
-        - name: internal_python_variable_name
-          type: text
-          label: Setting Friendly Display Name
-          value: ""
-          placeholder: demo prompt in the input box
-    - name: Login << Name of another section
+    - name: Stops
       fields:
         - type: label
-          label: Just a little bit of extra info for the user to understand following settings
-        - name: username
+          label: You need to list the stops to use to search for realtime departure information. Go to https://api.entur.io/journey-planner/v2/ide/ and use the Search for ID button. Use the value in the ID column
+        - name: stops
           type: text
-          label: Username
+          label: Comma seperated list of stop ids
           value: ""
-        - name: password
-          type: password
-          label: Password
+        - type: label
+          label: If there are departures you want to ignore, you can enter a comma separated list of words to filter on in the name of the departure
+        - name: filter
+          type: text
+          label: Command seperated list of words to filter out
           value: ""
+          placeholder: "via Storo,Bergkrystallen"

@@ -1,0 +1,26 @@
+when is the next departure
+when is the next {transport}
+when is the next {transport} line {line}
+when is the next {transport} leaving
+when is the next {transport} line {line} leaving
+when is the next {transport} departure
+when is the next {transport} line {line} departure
+when does the {transport} leave
+when does {line} leave
+when does the {transport} depart
+when does {line} depart
+when does the next {transport} leave
+when does the next {transport} line {line} leave
+give me the next departure
+give me the next {transport}
+give me the next {transport} line {line}
+give me the next {transport} with line {line}
+give me the next line {line}
+get me the next departure
+get me the next {transport}
+get me the next {transport} line {line}
+get me the next line {line}
+get me the next {transport} departure
+get me the next {transport} line {line} departure
+get me the next line {line} departure
+get me the line {line}
