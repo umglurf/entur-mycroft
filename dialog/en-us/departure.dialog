@@ -1,2 +1,2 @@
-Line {line} to {destination} leaves in {time}
+Line {line} to {destination} leaves {time}
 

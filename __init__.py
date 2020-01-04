@@ -58,9 +58,9 @@ class Entur(MycroftSkill):
             if time_diff.days == 1:
                 return "tomorrow at {} {}".format(departure_time.hour, departure_time.minute)
             else:
-                return "{} days at {} {}".format(time_diff.days, departure_time.hour, departure_time.minute)
+                return "in {} days at {} {}".format(time_diff.days, departure_time.hour, departure_time.minute)
         if time_diff.seconds < 60:
-            return "{} seconds".format(time_diff.seconds)
+            return "in {} seconds".format(time_diff.seconds)
         minutes = int(time_diff.seconds / 60)
         if minutes < 30:
             return "{} minutes".format(minutes)
