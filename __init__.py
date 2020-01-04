@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 from mycroft import MycroftSkill, intent_file_handler
-from .realtime import RealTime
+from . import realtime
 
 # NSR:StopPlace:6024 - sinsenterrassen
 # NSR:StopPlace:6035 - sinsen t-bane
@@ -9,14 +9,18 @@ from .realtime import RealTime
 class Entur(MycroftSkill):
     def __init__(self):
         MycroftSkill.__init__(self)
+        self.real_time = None
+        self.settings_change_callback = self.handle_websettings_update
 
     def initialize(self):
-        self.settings_change_callback = self.handle_websettings_update
         self.handle_websettings_update()
 
     @intent_file_handler('realtime.departure.intent')
     def handle_realtime_departure(self, message):
-        if not self.settings.get('stops', None):
+        if(type(self.settings).__name__):
+            self.handle_websettings_update()
+
+        if self.real_time is None:
             self.speak_dialog('no.stops')
             return
         departures = self.real_time.get_departures(line=message.data.get('line'), transport_type=message.data.get('transport'))
@@ -39,12 +43,14 @@ class Entur(MycroftSkill):
                 }, wait=True)
 
     def handle_websettings_update(self):
-        stops = self.settings.get('stops', "").split(",")
+        self.real_time = None
+        stops = self.settings.get('stops', "")
         filters = self.settings.get('filter', "").split(",")
-        try:
-            self.real_time = RealTime(stops, filters)
-        except:
-            self.speak_dialog('invalid.stop')
+        if len(stops) > 0:
+            try:
+                self.real_time = realtime.RealTime(stops.split(","), filters)
+            except:
+                self.speak_dialog('invalid.stop')
 
     def _format_time(self, departure_time):
         time_diff = departure_time - datetime.now(timezone.utc)

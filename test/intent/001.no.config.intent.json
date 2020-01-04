@@ -1,0 +1,5 @@
+{
+  "utterance": "Get the next departure",
+  "expected_dialog": "no.stops",
+  "settings": {"stops": "", "filter": ""}
+}

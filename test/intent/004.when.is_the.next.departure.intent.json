@@ -1,0 +1,5 @@
+{
+  "utterance": "When is the next departure",
+  "expected_dialog": "next.departure",
+  "settings": {"stops": "NSR:StopPlace:58366", "filter": ""}
+}

@@ -16,11 +16,11 @@ give me the next {transport}
 give me the next {transport} line {line}
 give me the next {transport} with line {line}
 give me the next line {line}
-get me the next departure
-get me the next {transport}
-get me the next {transport} line {line}
-get me the next line {line}
-get me the next {transport} departure
-get me the next {transport} line {line} departure
-get me the next line {line} departure
-get me the line {line}
+get the next departure
+get the next {transport}
+get the next {transport} line {line}
+get the next line {line}
+get the next {transport} departure
+get the next {transport} line {line} departure
+get the next line {line} departure
+get the line {line}
