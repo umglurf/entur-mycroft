@@ -63,7 +63,7 @@ class Entur(MycroftSkill):
             return "in {} seconds".format(time_diff.seconds)
         minutes = int(time_diff.seconds / 60)
         if minutes < 30:
-            return "{} minutes".format(minutes)
+            return "in {} minutes".format(minutes)
         return "at {} {}".format(departure_time.hour, departure_time.minute)
 
 def create_skill():
